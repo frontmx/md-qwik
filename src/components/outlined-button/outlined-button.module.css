@@ -1,0 +1,33 @@
+.mdOutlinedButtonWithIcon {
+    width: fit-content;
+    min-height: 40px;
+    padding: 0 24px 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #79747E;
+    border-radius: 40px;
+}
+
+.mdOutlinedButton {
+    width: fit-content;
+    min-height: 40px;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #79747E;
+    border-radius: 40px;
+}
+
+.mdOutlinedButtonLabel {
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #6750A4;
+    line-height: 20px;
+}
+
+.mdOutlinedButtonIcon {
+    font-size: 18px;
+    color: #6750A4;
+}

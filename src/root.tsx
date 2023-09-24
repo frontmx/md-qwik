@@ -1,4 +1,5 @@
 import {OutlinedButton} from "./components/outlined-button/outlined-button";
+import "./global.css";
 
 export default () => {
     return (
@@ -12,9 +13,15 @@ export default () => {
                 <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"/>
             </head>
             <body>
-            <OutlinedButton>Outlined button</OutlinedButton>
+            <div style="display: flex; gap: 16px">
+                <OutlinedButton>Enabled</OutlinedButton>
+                <OutlinedButton disabled>Disabled</OutlinedButton>
+            </div>
             <br/>
-            <OutlinedButton icon="add">Outlined button</OutlinedButton>
+            <div style="display: flex; gap: 16px">
+                <OutlinedButton icon="add">Enabled</OutlinedButton>
+                <OutlinedButton icon="add" disabled>Disabled</OutlinedButton>
+            </div>
             </body>
         </>
     );

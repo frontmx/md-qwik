@@ -1,5 +1,5 @@
-import {component$, Slot, useSignal} from "@builder.io/qwik";
-import styles from './outlined-button.module.css';
+import {component$, Slot, useSignal, useStylesScoped$} from "@builder.io/qwik";
+import styles from './outlined-button.css?inline';
 
 interface OutlinedButtonProps {
     icon?: string;
@@ -9,6 +9,7 @@ interface OutlinedButtonProps {
 export const OutlinedButton = component$((props: OutlinedButtonProps) => {
     const hasIcon = props.icon !== undefined && (props.icon !== '');
     const showRipple = useSignal(false);
+    useStylesScoped$(styles);
 
     return (
         <button onMouseUp$={() => {
@@ -18,20 +19,20 @@ export const OutlinedButton = component$((props: OutlinedButtonProps) => {
             }, 300);
         }}
                 class={[
-                    styles.mdOutlinedButton,
-                    hasIcon ? styles.mdOutlinedButtonWithIcon : null
+                    'mdOutlinedButton',
+                    hasIcon ? 'mdOutlinedButtonWithIcon' : null
                 ]} disabled={props.disabled}>
-            <div class={styles.rippleContainer}>
+            <div class={'rippleContainer'}>
                 {showRipple.value ?
-                    <span class={styles.ripple}></span> :
+                    <span class={'ripple'}></span> :
                     null
                 }
             </div>
             {hasIcon ?
-                <div class={[styles.mdOutlinedButtonIcon, 'material-symbols-outlined']}>{props.icon}</div> :
+                <div class={['mdOutlinedButtonIcon', 'material-symbols-outlined']}>{props.icon}</div> :
                 null
             }
-            <div class={styles.mdOutlinedButtonLabel}><Slot/></div>
+            <div class={'mdOutlinedButtonLabel'}><Slot/></div>
         </button>
     );
 })

@@ -1,0 +1,80 @@
+.mdOutlinedButton {
+    width: fit-content;
+    position: relative;
+    min-height: 40px;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--neutral);
+    border-radius: 40px;
+    background-color: transparent;
+}
+
+.mdOutlinedButton.mdOutlinedButtonWithIcon {
+    padding: 0 24px 0 16px;
+    gap: 8px;
+}
+
+.mdOutlinedButton:disabled {
+    border-color: rgba(29, 27, 32, 0.12);
+
+    .mdOutlinedButtonLabel,
+    .mdOutlinedButtonIcon {
+        color: rgba(29, 27, 32, 0.38);
+    }
+}
+
+.mdOutlinedButton:not(:disabled):hover {
+    background-color: rgba(103, 80, 164, 0.08);
+}
+
+.mdOutlinedButton:not(:disabled):focus {
+    background-color: rgba(103, 80, 164, 0.12);
+    border-color: var(--primary);
+}
+
+.mdOutlinedButton:not(:disabled):active {
+    background-color: rgba(103, 80, 164, 0.12);
+    border-color: var(--neutral);
+}
+
+.rippleContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.ripple {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    background: rgba(103, 80, 164, 0.12);
+    min-width: 100px;
+    min-height: 100px;
+    transform: translate(-50px, -50px) scale(0);
+    animation: rippleAnim 0.3s cubic-bezier(0, 0, 0.2, 1);
+}
+
+@keyframes rippleAnim {
+    to {
+        transform: translate(-50px, -50px) scale(1);
+        opacity: 0;
+    }
+}
+
+.mdOutlinedButtonLabel {
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #6750A4;
+    line-height: 20px;
+}
+
+.mdOutlinedButtonIcon {
+    font-size: 18px;
+    color: #6750A4;
+}

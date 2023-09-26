@@ -3,7 +3,7 @@ import style from "./extended-fab-button.css?inline";
 export default component$((props: ExtendedFabButtonProps) => {
   useStylesScoped$(style);
   return (
-    <button
+    <button onClick$={props?.onClick}
       disabled={props.disabled ?? false}
       type={props.type ?? "submit"}
       class={[

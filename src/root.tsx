@@ -2,6 +2,8 @@ import {OutlinedButton} from "./components/outlined-button/outlined-button";
 import "./global.css";
 import ExtendedFabButton from './components/extended-fab-button/extended-fab-button';
 import './temp/material/theme.css'
+import {$} from "@builder.io/qwik"
+const log = (msg: string) => $(() => console.log(msg));
 export default () => {
     return (
         <>
@@ -28,12 +30,11 @@ export default () => {
                 <OutlinedButton icon="add" disabled>Disabled</OutlinedButton>
             </div>
             <div style="display: flex; gap: 16px">
-              <ExtendedFabButton icon="edit" color="primary" >Enabled with icon</ExtendedFabButton>
               <ExtendedFabButton icon="edit" disabled color="primary" >Disabled with icon</ExtendedFabButton>
-              <ExtendedFabButton color="secondary" >Secondary</ExtendedFabButton>
-              <ExtendedFabButton color="tertiary" >Secondary</ExtendedFabButton>
-              <ExtendedFabButton color="error" >Error</ExtendedFabButton>
-             
+              <ExtendedFabButton onClick={log('primary')} icon="edit" color="primary" >Enabled with icon</ExtendedFabButton>
+              <ExtendedFabButton onClick={log('secondary')} color="secondary" >Secondary</ExtendedFabButton>
+              <ExtendedFabButton onClick={log('tertiary')} color="tertiary" >Tertiary</ExtendedFabButton>
+              <ExtendedFabButton onClick={log('error')} color="error" >Error</ExtendedFabButton>
             </div>
             </body>
         </>
